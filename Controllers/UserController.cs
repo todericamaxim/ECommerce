@@ -39,6 +39,7 @@ namespace ECommerce.Controllers
             {
                 ViewBag.error = "Imaginea nu poate fi incarcata....";
             }
+
             else
             {
                 tbl_user u = new tbl_user();
