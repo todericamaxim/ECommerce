@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .na {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse" style="">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">ECommerce</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Categorie", "Index", "User", null, new { @class = "ht" })</li>
+                <li>
+                    @if (Session["u_id"] != null)
+                    {
+                        @Html.ActionLink("Posteaza", "CreateP", "User", null, new { @class = "ht" })
+
+                    }
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @if (Session["u_id"] == null)
+                    {
+
+                        @Html.ActionLink("Logare", "login", "User", null, new { @class = "ht", })
+
+                    }
+                </li>
+                <li>
+                    @if (Session["u_id"] == null)
+                    {
+                        @Html.ActionLink("Client nou", "Sign", "User", null, new { @class = "ht" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Iesire", "Iesire", "User", null, new { @class = "ht" })
+                    }
+
+                <li>
+            </ul>
+        </div>
+        
+        
+        
+
+    </nav>
+
+    @RenderBody()
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

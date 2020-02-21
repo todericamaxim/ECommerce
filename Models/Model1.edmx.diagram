@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24d156ab5e8740c69c4b04417223fcb8" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="dbemarketingModel.tbl_admin" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbemarketingModel.tbl_Category" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbemarketingModel.tbl_product" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbemarketingModel.tbl_user" Width="1.5" PointX="8" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="dbemarketingModel.FK__tbl_Categ__cat_f__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="dbemarketingModel.FK__tbl_produ__pro_f__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="dbemarketingModel.FK__tbl_produ__pro_f__30F848ED" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbemarketingModel.sysdiagram" Width="1.5" PointX="7" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
