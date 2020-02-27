@@ -43,10 +43,20 @@ namespace ECommerce.Controllers
             return View();
         }
 
+        public ActionResult InsertCategory()
+        {
+            if (Session["ad_id"]==null)
+            {
+                return RedirectToAction("Create");
+            }
+            return View();
+        }
+        
+        
 
 
         [HttpPost]
-        public ActionResult Create(tbl_Category cvm,HttpPostedFileBase imgfile)
+        public ActionResult InsertCategory(tbl_Category cvm,HttpPostedFileBase imgfile)
         {
             string path = Upload(imgfile);
             if (path.Equals("-1"))

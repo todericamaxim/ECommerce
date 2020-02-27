@@ -11,8 +11,6 @@ namespace ECommerce.Controllers
 {
     public class UserController : Controller
     {
-
-
         dbemarketingEntities db = new dbemarketingEntities();
         // GET: User
         public ActionResult Index(int? page)
@@ -147,11 +145,13 @@ namespace ECommerce.Controllers
             rp.pro_name = p.pro_name;
             rp.pro_image = p.pro_image;
             rp.pro_price = p.pro_price;
+            rp.pro_des = p.pro_des;
             tbl_Category cat = db.tbl_Category.Where(x=>x.cat_id==p.pro_fk_cat).SingleOrDefault();
             rp.cat_name = cat.cat_name;
             tbl_user u = db.tbl_user.Where(x => x.u_id == p.pro_fk_user).SingleOrDefault();
             rp.u_name = u.u_name;
             rp.u_image = u.u_image;
+            
             rp.u_contact = u.u_contact;
             rp.pro_fk_user = u.u_id;
 

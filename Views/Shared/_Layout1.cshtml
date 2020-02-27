@@ -3,6 +3,7 @@
 <html>
 <head>
     <style>
+        <
         .na {
             text-decoration: none;
             color: white;
@@ -13,11 +14,48 @@
 
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-    <nav class="navbar navbar-inverse" style="">
 
-        <div class="container-fluid">
+</head>
+    
+<body>
+    <header id="header">
+        <img class="logo" src="~/Content/img/logo2.jpeg" alt="logo" />
+        <nav>
+            <ul class="nav_links">
+                <li>
+                    <a href="~/Views/User/Index.cshtml">
+                        @Html.ActionLink("ACASA", "Index", "User", null, new { @class = "ht" })
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Views/User/login.cshtml">
+                        @Html.ActionLink("Logare", "login", "User", null, new { @class = "ht", })
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Views/User/login.cshtml">
+                        @Html.ActionLink("Logare", "login", "User", null, new { @class = "ht", })
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+        <nav class="navbar navbar-inverse" style="">
+
+            <nav class="links" style="--items: 5;">
+                <a href="#">@Html.ActionLink("ACASA", "Index", "User", null, new { @class = "ht" })</a>
+                <a href="#">@Html.ActionLink("Logare", "login", "User", null, new { @class = "ht", })</a>
+                <a href="#">Link 3</a>
+                <a href="#">Link 4</a>
+                <a href="#">Link 5</a>
+                <span class="line"></span>
+            </nav>
+    </header>
+
+    @*<div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">ECommerce</a>
             </div>
@@ -52,10 +90,10 @@
 
                 <li>
             </ul>
-        </div>
-        
-        
-        
+        </div>*@
+
+
+
 
     </nav>
 

@@ -3,7 +3,8 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+    Layout = "~/Views/Shared/Principal.cshtml";
+
 }
 
 <style>
@@ -14,7 +15,7 @@
     }
 
         .cimg:hover {
-            -webkit-transform: rotatez(360deg);
+            -webkit-transform: rotatez(0deg);
         }
 </style>
 
@@ -30,7 +31,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div style="height:1150px; ">
+    @*<div style="height:1150px; ">
         <div class="row">
             <div class="col-lg-12" style="height:100px; border:1px solid solid; ">
 
@@ -40,48 +41,58 @@
 
             </div>
 
-        </div>
+        </div>*@
 
 
 
-        <div class="row" style="margin-bottom:40px">
+    @*<div class="row" style="margin-bottom:40px">*@
 
-            <div class="col-lg-2 col-md-2">
-                <img src="~/Content/img/150_sleep1_600.gif" class="img img-responsive" style="width:100%; height:100%" />
-            </div>
+        @*<div class="col-lg-2 col-md-2">
+            <img src="~/Content/img/150_sleep1_600.gif" class="img img-responsive" style="width:100%; height:100%" />
+        </div>*@
 
-            <div class="col-lg-8 col-md-8">
-                <div class="row">
-                    @if (Model != null)
+        <div class="col-lg-8 col-md-8">
+            <div class="row">
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
                     {
-                        foreach (var item in Model)
-                        {
-                            <div class="col-lg-4 col-md-4" style="height:200px;margin-top:100px">
+                        <div class="col-lg-4 col-md-4" style="height:200px;margin-top:100px">
 
-                                <img class="img img-responsive cimg" src="@Url.Content(item.cat_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />
-                                <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink(@item.cat_name, "Ads", new { id = @item.cat_id })</h4>
+                            <img class="img img-responsive cimg" src="@Url.Content(item.cat_image)" style=" height:100%;width:100% ;border-radius:50px 50px 50px 50px" />
+                            <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> @Html.ActionLink(@item.cat_name, "Ads", new { id = @item.cat_id })</h4>
 
-                            </div>
+                        </div>
 
-                        }
                     }
-                </div>
+                }
             </div>
-
-
-            <div class="col-lg-2 col-md-2">
-                <img src="~/Content/img/LOB_val_600.gif" class="img img-responsive" style="width:100%; height:100%" />
-            </div>
-
-
-
-
-
         </div>
-
-
+        @*--------------------------------------------------------*@
+    <div class="row">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-md-4 col-xs-6">
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="src="@Url.Content(item.cat_image)"" alt="">                            
+                        </div>
+                        
+                    </div>
+                </div>
+            }
+        }
     </div>
+        
 
+
+        @*<div class="col-lg-2 col-md-2">
+            <img src="~/Content/img/LOB_val_600.gif" class="img img-responsive" style="width:100%; height:100%" />
+        </div>*@
+    </div>
+    @*<--pagination-->*@
     <div id="container" style="margin-left: 20px">
         <p></p>
         <p></p>

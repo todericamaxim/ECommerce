@@ -4,7 +4,7 @@
 }
 
 
-<style>
+@*<style>
     #box {
         border: 1px solid black;
         height: 100%;
@@ -54,7 +54,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                        @*<asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Username" required="required"></asp:TextBox>*@
+                        <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Username" required="required"></asp:TextBox>
                         @Html.TextBoxFor(x => x.ad_username, new { @class = "form-control", @placeholder = "Nume" })
 
                     </div>
@@ -64,7 +64,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                        @*<asp:TextBox ID="txtpassword" runat="server" class="form-control" placeholder="Password" TextMode="Password" required="required"></asp:TextBox>*@
+                        <asp:TextBox ID="txtpassword" runat="server" class="form-control" placeholder="Password" TextMode="Password" required="required"></asp:TextBox>
                         @Html.PasswordFor(x => x.ad_password, new { @class = "form-control", @placeholder = "Parola" })
 
                     </div>
@@ -75,7 +75,7 @@
 
 
                 <div class="form-group">
-                    @*<asp:Button ID="Button1" runat="server" Text="Log In" class="form-control  btn-success" OnClick="Button1_Click" OnClientClick="retrun(passwordmatchfunc())" />*@
+                    <asp:Button ID="Button1" runat="server" Text="Log In" class="form-control  btn-success" OnClick="Button1_Click" OnClientClick="retrun(passwordmatchfunc())" />
                     <input type="submit" value="Login" class="btn btn-success btn-block" />
 
                 </div>
@@ -101,5 +101,74 @@
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-}
+}*@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V6</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="icon" type="image/png" href="~/Content/LoginForm/images/icons/favicon.ico" />  
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/vendor/bootstrap/css/bootstrap-grid.min.css>
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="~/Content/LoginForm/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/LoginForm/css/main.css">
+    </head>
+<body>
+    @using (@Html.BeginForm())
+    {
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100 p-t-85 p-b-20">
+                    <span class="login100-form-title p-b-70">
+                        Administrator
+                    </span>
+                    <span class="login100-form-avatar">
+                        <img src="~/Content/LoginForm/images/avatar-01.jpg" alt="AVATAR">
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
+                        
+                        @Html.TextBoxFor(x => x.ad_username, new { @class = "input100", @placeholder = "Nume" })
+                        @Html.ValidationMessageFor(x => x.ad_username)
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+                       
+                        @Html.PasswordFor(x => x.ad_password, new { @class = "input100", @placeholder = "Parola" })
+                        @Html.ValidationMessageFor(x => x.ad_password)
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                       
+                        <input type="submit" value="Logare" class="login100 login100-form-btn">
+                    </div>
+
+                    <p style="color:red">
+                        <div>@ViewBag.error</div>
+                        
+
+
+                </div>
+            </div>
+        </div>
+    }
+    <div id="dropDownSelect1"></div>
+    <script src="~/Content/LoginForm/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/LoginForm/vendor/animsition/js/animsition.min.js"></script>
+    <script src="~/Content/LoginForm/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Content/LoginForm/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/LoginForm/vendor/select2/select2.min.js"></script>
+    <script src="~/Content/LoginForm/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/Content/LoginForm/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="~/Content/LoginForm/vendor/countdowntime/countdowntime.js"></script>
+    <script src="~/Content/LoginForm/js/main.js"></script>
+
+</body>
+</html>
